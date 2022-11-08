@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-vector <string>valid;
+
 void solve(string &a,int open,int close){
     if (open==0 && close==0){
         valid.push_back(a);
@@ -9,7 +9,7 @@ void solve(string &a,int open,int close){
     if (open>0){
 a.push_back('(');
 solve(a,open-1,close);
-a.pop_back();
+a.pop_back();  //popback kiya coz jb bhi choice vala ques aa jaye ya ye ya vo to popback krte taki agle function call k liye empty rhe
     }
 
     if (close>0)
@@ -24,6 +24,10 @@ a.pop_back();
     }
 }
 int main(){
+   
 string a="";
 solve(a,2,2);
 return 0;}
+
+//APPROACH
+// OPEN WALE SHOULD BE GREATER THAN CLOSE
