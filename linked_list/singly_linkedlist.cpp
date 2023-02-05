@@ -1,139 +1,107 @@
-// #include<iostream>
-// using namespace std;
-// class Node{
-//     public:
-//     int data;
-//     Node* next;
-//     Node(int data){
-//         this->data=data;
-//         this->next=NULL;
-//     }
-//  void InsertAtHead(Node* &head,int data){
-//     Node* temp=new Node(data);
-//     this->next=head;            //iska next ka address head ko point krega
-//     head=temp;                      //temp ko head krdo
-//  }
-
-
-// };
-// int main(){
-// Node* node1=new Node(10);
-
-// return 0;}
-
-
 #include<iostream>
 using namespace std;
-
 class Node{
 public:
-    int data;
-    Node* next;
-
-     Node(int data){
-        this -> data= data;
-        this -> next= NULL;
-    }
-    ~Node(){
-        int value=this->data;
-       
-        cout<<"Node deleted with value"<<value<<endl;
-    }
-};
-void insertAtHead(Node*  &head,int data){
-        Node* temp=new Node(data);
-       temp->next=head;
-        head=temp;
-            }
-            
-                   void print(Node*  &head){
-        Node* temp=head;
-    while(temp!=NULL){
-    cout<<temp->data<<endl;
-    temp=temp->next;}
-            }
-
-// Insert at tailx
-void insertAtTail(Node*  &tail,int data){
-    Node* temp=new Node(data);
-    tail->next=temp;
-   tail=temp;
+int data;
+Node* next;
+Node (int data){
+    this->data=data;
+    this->next=NULL;
 }
 
-//Insert anywhere
-void insertAnywhere(Node*  &head,Node*  &tail,int position,int data){
-    int count=1;
-    Node* temp=head;
-    if (position==1)    
+
+};
+
+
+void insertAtHead(Node* &head,int data){
+    Node* temp= new Node(data);
+temp->next=head;
+head=temp;
+}
+void insertAtTail(Node* &tail,int data){
+    Node* temp= new Node(data);
+    tail->next=temp;
+    tail=temp;
+}
+void insertAtMiddle(Node* &head,Node* &tail,int position,int data){
+
+    if (position==1)
     {
-        insertAtHead(head, data);
+        insertAtHead(head,data);
         return;
     }
-    
-    while (count<position-1)
+    Node* temp=head;
+    int count=1;
+    for (int i = 1; i < count-1; i++)
     {
         temp=temp->next;
-    count++;
-}
-//insert at last
-    if (temp->next==NULL)
-    {
-       insertAtTail(tail,data);
-       return;
-        /* code */
+
+        
     }
-    
-    Node* newNode=new Node(data);
-    newNode->next=temp->next;
-    temp->next=newNode;  
-
+if (temp->next==NULL)
+{
+    insertAtTail(tail,data);
 }
 
-//deleting
-void deleteNode(Node* &head,Node* &tail,int position){
-    if (position==1){
-        Node* temp=head;
+    Node* nodeTobeinserted=new Node(data);
+    nodeTobeinserted->next=temp->next;
+    temp->next=nodeTobeinserted;
+    
+}
+
+
+void print(Node* &head){
+Node* temp=head;
+while(temp!=NULL){
+    cout<<temp->data;
+    temp=temp->next;
+    cout<<endl;
+}
+}
+void deleteNode(Node*&head,Node* &tail,int position){
+    if (position==1)
+    {Node* temp=head;
         head=head->next;
         temp->next=NULL;
         delete temp;
+        return;
+        /* code */
     }
     else{
         Node* curr=head;
         Node* prev=NULL;
-        int count=1;
-        while(count<position){
+        for (int i = 1; i < position; i++)
+        {
             prev=curr;
             curr=curr->next;
-            count++;
-        }
-        prev->next=curr->next;
-
-        //  LAST ELEMENT DELETE
-        if (curr->next==NULL)
-        {
-     tail=prev;
             /* code */
         }
         
-        curr->next=NULL;
-        delete curr;
-    }
+prev->next=curr->next;
+curr->next=NULL;
+delete curr;
+if (prev->next==NULL)
+{    tail=prev;
+    /* code */
 }
-
+    }
+ 
+}
 int main(){
-Node* node1=new Node(10);
-// cout<<node1->data<<endl;
+Node* node1=new Node(20);
 Node* head=node1;
 Node* tail=node1;
-insertAtTail(tail,20);
 insertAtTail(tail,30);
-insertAnywhere(head,tail,3,50);
+insertAtTail(tail,40);
+insertAtMiddle(head,tail,2,34);
+insertAtMiddle(head,tail,1,10);
 print(head);
-// cout<<head->data<<endl;
-// cout<<tail->data<<endl;
-cout<<"hello"<<endl;
-deleteNode(head,tail,);
+cout<<"head is "<<head->data<<endl;
+cout<<"tail is "<<tail->data<<endl;
+deleteNode(head,tail,5);
+cout<<endl;
 print(head);
-cout<<"opldhcn"<<endl;
-cout<<tail->data<<endl;
+cout<<"head is "<<head->data<<endl;
+cout<<"tail is "<<tail->data<<endl;
+
 return 0;}
