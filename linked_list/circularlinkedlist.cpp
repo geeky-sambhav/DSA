@@ -1,3 +1,4 @@
+// Online C++ compiler to run C++ program online
 #include<iostream>
 using namespace std;
 
@@ -28,7 +29,7 @@ while (curr->data!=element)
 Node*temp=new Node(data);
 temp->next=curr->next;
 curr->next=temp;
-tail=temp;
+
 }
 
 
@@ -107,14 +108,16 @@ cout<<"tail is"<<tail->data<<endl;
 insert(tail,46,56);
 cout<<"tail is"<<tail->data<<endl;
 // print(tail);
-insert(tail,56,66);
+insert(tail,46,66);
 cout<<"tail is"<<tail->data<<endl;
-deleteNode(tail,6);
-deleteNode(tail,16);
-deleteNode(tail,26);
-deleteNode(tail,36);
-deleteNode(tail,46);
+// deleteNode(tail,6);
+// deleteNode(tail,16);
+// deleteNode(tail,26);
+// deleteNode(tail,36);
+// deleteNode(tail,46);
 
 print(tail);
-return 0;}
+return 0;                                                                                                                   
 
+ ;}
+ 
