@@ -52,4 +52,4 @@ class Solution
         }
         temp->next=NULL;
          }
-};
+}; 
