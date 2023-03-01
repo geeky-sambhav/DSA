@@ -21,4 +21,4 @@ stack.pop();
 reverseStack(stack);
 insertAtbottom(stack,num);
 
-}
+}                
