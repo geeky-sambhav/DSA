@@ -1,3 +1,11 @@
+//APROACH
+// INVALID BS AISE HI HO SKTA HAI
+// {{{{{{{{
+// }}}}}}}}
+// }}}}{{{{    
+// JO INVALID HAI USKO THEEK KRNE KE LIYE (OPENING+1/2)+(CLOSING+1/2) LGANA
+
+
 #include <bits/stdc++.h> 
 int findMinimumCost(string str) {
   if(str.length()%2!=0){
