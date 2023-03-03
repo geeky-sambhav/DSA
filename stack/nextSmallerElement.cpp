@@ -1,3 +1,8 @@
+//APROACH
+// LAST SE SHURU HO JAO AUR CHECK KRTE JAO
+// STARTING MEIN STACK KE -1 DAALDO COZ LAST VALA ELEMENT TO -1 HI RHEGA
+
+
 #include<stack>
 vector<int> nextSmallerElement(vector<int> &arr, int n)
 {
