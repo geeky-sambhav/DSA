@@ -1,5 +1,6 @@
 class Solution {
 public:
+
     vector <int> nextSmaller(vector<int> heights,int n){
         stack<int>s1;
         
@@ -13,6 +14,7 @@ public:
             ans[i]=n-1;
             }
             else{
+                //CREATING BOUNDARIES
                 ans[i]=s1.top()-1;
             }
             s1.push(i);
