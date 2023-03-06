@@ -1,3 +1,5 @@
+    // JINE REVERSE KRNE UTNE STACK MEIN DAALDO
+
 queue<int> modifyQueue(queue<int> q, int k) {
     stack<int>s1;
     
