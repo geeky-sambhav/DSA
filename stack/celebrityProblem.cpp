@@ -1,3 +1,11 @@
+// STEP 1 FIND POTENTIAL CANDIDATE
+// STACK MEIN 2 ELEMENTS KO UTHAYE JAO AUR DEKHO KE VO EK DUSRE KO JAANTE HAI KE NHI
+// LAST MEIN 1 BNDA REH JAYEGA JO KISI KO NHI JAANTA HO VO HOGA POTENTIAL CANDIDATE
+
+// STEP 2 FIND ZEROCOUNT AND ONECOUNT AND RETURN THE ANSWER
+
+
+
 class Solution 
 {
     public:
@@ -35,23 +43,23 @@ class Solution
             
         }
         int potential=s1.top();
-        int rowcount=0;
+        int zerocount=0;
         for(int i=0;i<n;i++){
             if(M[potential][i]==0){
-                rowcount++;
+                zerocount++;
             }
         }
-        if(rowcount!=n){
+        if(zerocount!=n){
             return -1;
         }
         
-        int colcount=0;
+        int onecount=0;
         for(int i=0;i<n;i++){
             if(M[i][potential]==1){
-                colcount++;
+                onecount++;
             }
         }
-        if(colcount!=n-1){
+        if(onecount!=n-1){
             return -1;
         }
         return potential;
