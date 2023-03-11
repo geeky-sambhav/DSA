@@ -1,3 +1,8 @@
+//PEHLE LEFT AUR RIGHT BOUNDARIES DEFINE KRO IE LEFT SMALLER ELEMENT AND RIGHT SMALLER ELEMENTS THAT WILL BE OUR BREATH
+//YE STACK MEIN ASCENDING ORDER MEIN HI JAANI CHAHIYE
+// FIR HEIGHTS[I]* BREATH1+1 KA MAX =ANSWER
+
+
 class Solution {
 public:
 
@@ -27,7 +32,7 @@ return ans;
         stack<int>s1;
         
         vector<int> ans(n);
-        for (int i=0;i<n;i++){
+        for (int i=0;i<n;i++){ 
             while(!s1.empty() && (heights[i]<=heights[s1.top()])){
                 s1.pop();
             }
