@@ -1,4 +1,4 @@
-
+// AT ANY TIME IT IS NOT BALANCED IT RETURNS -1
 class Solution{
     public:
     int height(Node* root){
