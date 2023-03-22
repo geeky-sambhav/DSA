@@ -8,7 +8,7 @@ class Solution
     //from left to right in Binary Tree.
     vector<int> topView(Node *root)
     {
-        map<int,int> nodes;
+        map<int,int> nodes;  //hd to nodes
         vector<int>ans;
         if(root==NULL){
             return ans;
@@ -20,7 +20,7 @@ class Solution
             q.pop();
             Node* frontNode=temp.first;
             int hd=temp.second;
-            if(nodes.find(hd)==nodes.end()){
+            if(nodes.find(hd)==nodes.end()){     //if nodes[hd] doesnot exit
                 nodes[hd]=frontNode->data;
                 
                 
