@@ -1,4 +1,4 @@
-SAME AS LEFT BUT PEHLE RIGHT SE VIEW KREGE
+// SAME AS LEFT BUT PEHLE RIGHT SE VIEW KREGE
 
 class Solution
 {
@@ -11,6 +11,7 @@ class Solution
     if(lvl==ans.size()){
 ans.push_back(root->data);
     }
+    //PEHLE RIGHT TREE BUILD HOGA
     solve(root->right,lvl+1,ans);
     solve(root->left,lvl+1,ans);
 }
