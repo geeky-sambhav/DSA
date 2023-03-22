@@ -1,19 +1,14 @@
-void inorder(BinaryTreeNode<int> *root,int &count){
-    if(root==NULL){
-        return;
+int countLeaves(Node* root)
+{
+ int count=0;
+    if (root==NULL){
+        return 0;
     }
-    inorder(root->left,count);
-    if(root->left==NULL && root->right==NULL){
-        count++;
-    }
-    inorder(root->right,count);
-}
-int noOfLeafNodes(BinaryTreeNode<int> *root){
-    // Write your code here.
-int count=0;
-inorder(root,count);
-return count;
-
-
-
+Node* curr=root;
+ if(root->left==NULL && root->right==NULL){
+     return 1;
+ }
+ int lnodes=countLeaves(curr->left);
+int  rnodes=countLeaves(curr->right);
+ return lnodes+rnodes;
 }
