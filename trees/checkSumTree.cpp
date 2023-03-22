@@ -5,7 +5,7 @@ class Solution
         if(!root){
             return 0;
         }
-        if(!root->left && !root->right){
+        if(!root->left && !root->right){    //child node
             return root->data;
         }
         if(ans==0){
