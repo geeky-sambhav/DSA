@@ -14,4 +14,4 @@ void solve(TreeNode* root,vector<int>&v){
        solve(root,v);
        return v[k-1];
     }
-};
+};          
