@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Following Mouse Pointer</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        .face {
+            position: absolute;
+            font-size: 2rem;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="face" id="face">uegwiuguige</div>
+    <script>
+        const face = document.getElementById('face');
+
+        document.addEventListener('mousemove', (event) => {
+            face.style.left = event.clientX + 'px';
+            face.style.top = event.clientY + 'px';
+        });
+    </script>
+</body>
+</html>
