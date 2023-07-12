@@ -20,15 +20,4 @@ int longestIncreasingSubsequence(int arr[], int n)
 }
 
 //PRINTING 
-To printing there is a simpler approach and here is the code with explanation for it =>
-        int mx = res;
-        vector<int>lis;
-        for(int i = n-1;i>=0;--i){
-            if(dp[i] == mx){
-                lis.emplace_back(v[i]);
-                mx--;
-            }
-        }
-        reverse(begin(lis),end(lis));
-        for(auto &it : lis) cout<<it<<" ";
-        cout<<"\n";
+divisible set
