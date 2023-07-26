@@ -97,3 +97,7 @@ else{
 	}
 	return prev[n2];
 }   
+
+
+
+int lcs(int )
