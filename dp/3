@@ -1,0 +1,65 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int count_changes_to_balance(string row1, string row2) {
+    auto count_chars = [](const string& str) {
+        int countR = 0, countW = 0, countQ = 0;
+        for (char ch : str) {
+            if (ch == 'R') countR++;
+            else if (ch == 'W') countW++;
+            else if (ch == '?') countQ++;
+        }
+        return make_tuple(countR, countW, countQ);
+    };
+
+    int countRRow1, countWRow1, countQRow1;
+    int countRRow2, countWRow2, countQRow2;
+    tie(countRRow1, countWRow1, countQRow1) = count_chars(row1);
+    tie(countRRow2, countWRow2, countQRow2) = count_chars(row2);
+
+
+    int diffR1 = abs(countRRow1 - countWRow1);
+    int diffR2 = abs(countRRow2 - countWRow2);
+
+    if ((countRRow1 > countWRow1 && countQRow1 < diffR1) ||
+        (countRRow1 < countWRow1 && countQRow1 < diffR1) ||
+        (countRRow2 > countWRow2 && countQRow2 < diffR2) ||
+        (countRRow2 < countWRow2 && countQRow2 < diffR2)) {
+      
+        return -1;
+    }
+
+    int sum = 0;
+
+   
+    if (countRRow1 != countWRow1) {
+        if (countQRow1 >= diffR1) {
+            sum += diffR1;
+            countQRow1 -= diffR1;
+            countRRow1 = countWRow1;
+        } else {
+            sum += countQRow1;
+            countRRow1 += countQRow1;
+            countQRow1 = 0;
+        }
+    }
+
+
+    if (countRRow2 != countWRow2) {
+        if (countQRow2 >= diffR2) {
+            sum += diffR2;
+            countQRow2 -= diffR2;
+            countRRow2 = countWRow2;
+        } else {
+            sum += countQRow2;
+            countRRow2 += countQRow2;
+            countQRow2 = 0;
+        }
+    }
+
+    int remaining_changes = abs(countQRow1 - countQRow2);
+    sum += remaining_changes / 2;
+
+    return sum;
+}
