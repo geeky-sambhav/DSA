@@ -1,0 +1,1 @@
+morris traversal and count++ krte jao
